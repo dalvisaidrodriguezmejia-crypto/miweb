@@ -1,0 +1,653 @@
+   <nav>
+        <!-- 2. ENLACES (Hipervínculos) -->
+        <a href="#inicio">Inicio</a>
+        <a href="#contacto">Contacto</a>
+        <a href="https://www.google.com" target="_blank">Ir a Google</a>
+    </nav>
+
+    <main>
+        <!-- 3. TEXTOS Y PÁRRAFOS -->
+        <section id="inicio">
+            <h2>Conceptos Básicos</h2>
+            <p>HTML significa <strong>HyperText Markup Language</strong>. No es un lenguaje de programación, sino un lenguaje de marcado.</p>
+            <p>Podemos hacer texto en <em>cursiva</em>, agregar saltos de línea <br> y líneas divisorias:</p>
+            <hr>
+        </section>
+
+        <!-- 4. LISTAS (Ordenadas y Desordenadas) -->
+        <section>
+            <h2>Mis Tecnologías a Aprender</h2>
+            
+            <h3>Lista Desordenada (Viñetas)</h3>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+            </ul>
+
+            <h3>Lista Ordenada (Números)</h3>
+            <ol>
+                <li>Aprender HTML</li>
+                <li>Crear proyectos</li>
+                <li>Conseguir trabajo</li>
+            </ol>
+        </section>
+
+        <!-- 5. IMÁGENES -->
+        <section>
+            <h2>Imágenes en HTML</h2>
+            <!-- Recuerda cambiar "imagen.jpg" por la ruta de una foto real -->
+            <img src="https://via.placeholder.com/400x200" alt="Imagen de ejemplo del curso" width="400">
+        </section>
+
+        <!-- 6. TABLAS -->
+        <section>
+            <h2>Tabla de Usuarios</h2>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Edad</th>
+                        <th>Profesión</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Nicolás</td>
+                        <td>30</td>
+                        <td>Desarrollador</td>
+                    </tr>
+                    <tr>
+                        <td>Chanchito Feliz</td>
+                        <td>5</td>
+                        <td>Mascota</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- 7. FORMULARIOS -->
+        <section id="contacto">
+            <h2>Formulario de Contacto</h2>
+            <form action="/enviar" method="POST">
+                
+                <div>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required>
+                </div>
+                <br>
+                
+                <div>
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" required>
+                </div>
+                <br>
+                
+                <div>
+                    <label for="mensaje">Mensaje:</label><br>
+                    <textarea id="mensaje" name="mensaje" rows="4" cols="30" placeholder="Escribe aquí..."></textarea>
+                </div>
+                <br>
+
+                <div>
+                    <label>¿Te gustó el curso?</label>
+                    <input type="radio" name="gusto" value="si" id="si"> <label for="si">Sí</label>
+                    <input type="radio" name="gusto" value="no" id="no"> <label for="no">No</label>
+                </div>
+                <br>
+
+                <button type="submit">Enviar Formulario</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- 8. PIE DE PÁGINA -->
+    <footer>
+        <p>&copy; 2026 - Creado siguiendo el curso de HTML de Hola Mundo</p>
+    </footer>
+
+</body>
+</html>
+
+// Ventana emergente de alerta
+alert("hola mundo"); [4, 5]
+
+// Pintar texto dentro de un contenedor HTML
+document.getElementById('caja').innerHTML = "hola mundo"; [6, 7]
+
+// Declaración con var (reescribible)
+var nombre = 'pedro';
+var nombre = 'maría'; // Reescribe el valor [8, 9]
+
+// Declaración con let (alcance único)
+let usuario1 = 'pedro';
+let usuario2 = 'maría'; [10, 11]
+
+// Declaración de constante
+const pi = 3.14; [12, 13]
+
+// Concatenación moderna con Template Literals (` ${}`)
+let nombreAlumno = 'carlos';
+let edad = 25;
+let datos = `mi nombre es ${nombreAlumno} y tengo ${edad} años`;
+
+console.log(datos); // Imprime: "mi nombre es carlos y tengo 25 años" [12, 14]
+
+// Tipos de Datos y typeof
+var tipoTexto = "maría";
+console.log(typeof tipoTexto); // "string" [15, 16]
+
+var tipoNumero = 12;
+console.log(typeof tipoNumero); // "number" [17]
+
+var tipoBooleano = true;
+console.log(typeof tipoBooleano); // "boolean" [17, 18]
+
+// Incremento, Decremento y Módulo (Residuo)
+var num1 = 5;
+num1++; // Incrementa en 1 (resultado: 6) [19]
+num1--; // Decrementa en 1 (resultado: 4) [20]
+
+var numeroDivision = 18;
+console.log(numeroDivision % 3); // Extrae el residuo (resultado: 0) [20, 21]
+
+// Operadores Relacionales
+console.log(2 > 3);  // false [22, 23]
+console.log(3 == 3); // true (igualdad) [23]
+console.log(4 != 3); // true (distinto) [24]
+
+// 1. Condicionales (if, else if, else)
+let a = 22;
+let b = 20;
+
+if (a > b) {
+  console.log(`${a} es mayor a ${b}`); [25, 26]
+} else if (a == b) {
+  console.log("a y b son iguales"); [27]
+} else {
+  console.log(`${a} es menor a ${b}`); [26]
+}
+
+// 2. Selección Múltiple (switch)
+let curso = "javascript";
+
+switch (curso) {
+  case "java":
+    console.log("java");
+    break;
+  case "python":
+    console.log("python");
+    break;
+  case "javascript":
+    console.log("javascript");
+    break;
+  default:
+    console.log("no disponible"); [28-30]
+}
+
+// 3. Bucle FOR
+for (let i = 0; i <= 5; i++) {
+  console.log(i); // Imprime del 0 al 5 [31-33]
+}
+
+// 4. Bucle WHILE (incluye contador i++ para evitar bucles infinitos)
+let i = 0;
+while (i <= 8) {
+  console.log(i);
+  i++; // Contador indispensable [34-36]
+}
+
+// 5. Bucle DO-WHILE
+let j = 0;
+do {
+  j += 2;
+  console.log(j); // Incrementa de 2 en 2
+} while (j < 20); [37, 38]
+
+// Salto de línea dentro de un String (\n)
+let color = "rojo\nazul"; [39, 40]
+
+// Propiedades y Métodos de String
+let fruta = "manzana";
+console.log(fruta.length); // Cuenta caracteres: 7 [41, 42]
+console.log(fruta.toUpperCase()); // Convertir a mayúsculas: "MANZANA" [43]
+console.log(fruta.toLowerCase()); // Convertir a minúsculas: "manzana" [44]
+
+let lenguaje = "javascript";
+console.log(lenguaje.indexOf("c")); // Posición del carácter (comienza en 0) [45, 46]
+console.log(lenguaje.slice(2, 5)); // Extrae rango de caracteres [46]
+console.log(lenguaje.replace("javascript", "php")); // Reemplaza texto [47, 48]
+console.log(lenguaje.split("")); // Divide la cadena en un Array [49]
+
+// Conversión de String a Number
+let numeroCadena1 = "2";
+let numeroCadena2 = "3";
+console.log(Number(numeroCadena1) + Number(numeroCadena2)); // Suma numérica: 5 [50, 51]
+
+// 1. Manejo de Arrays y sus métodos
+let estudiantes = ["carlos", "maria", "jose"];
+
+console.log(estudiantes); // Acceso por índice: "carlos" [52, 53]
+console.log(estudiantes.length); // Cantidad de elementos: 3 [53]
+
+estudiantes.reverse(); // Invierte el orden de los elementos [54]
+estudiantes.sort(); // Ordena alfabéticamente [55, 56]
+estudiantes.push("luis"); // Agrega un elemento al final [56]
+estudiantes.shift(); // Elimina el primer elemento [57, 58]
+estudiantes.pop(); // Elimina el último elemento [58, 59]
+console.log(estudiantes.indexOf("maria")); // Busca la posición del elemento [60]
+estudiantes.unshift("sara"); // Añade un elemento al inicio del array [61, 62]
+
+// Unir / Concatenar Arrays
+let grupoA = [63-65];
+let grupoB = [31, 32, 66];
+let grupoCombinado = grupoA.concat(grupoB); [62, 67]
+
+// 2. Declaración de Objetos
+const auto = {
+  marca: "toyota",
+  modelo: 2018,
+  color: "azul",
+  accesorios: ["motor", "llantas", "luces"] // Array dentro de objeto [68-70]
+};
+
+console.log(auto.color); // Imprime: "azul" [71]
+console.log(auto.accesorios); // Imprime el Array de accesorios [71]
+
+// 1. Función clásica con argumentos
+function suma(a, b) {
+  var resultadoSuma = a + b;
+  console.log("La suma es " + resultadoSuma);
+}
+suma(8, 4); [72-74]
+
+// 2. Función retornable (return)
+function datosTrabajador() {
+  var salario = 2550;
+  return salario;
+}
+let obrero = datosTrabajador();
+console.log(obrero); [75-77]
+
+// 3. Función de Flecha / Anónima (Arrow Function =>)
+const resta = (n1, n2) => n1 - n2;
+console.log(resta(8, 2)); [78, 79]
+
+// 4. Funciones Anidadas (Área de un Círculo)
+function operacion() {
+  const pi = 3.14;
+  function area(radio) {
+    var resultadoArea = pi * radio * radio;
+    console.log("El área del círculo es " + resultadoArea);
+  }
+  return { area: area };
+}
+var radio = 4;
+operacion().area(radio); [80-84]
+
+// 5. Funciones Nativas Avanzadas
+// eval(): evalúa expresiones matemáticas en texto
+var calculoEval = eval("10 + 20"); [85, 86]
+
+// parseFloat() y parseInt()
+console.log(parseFloat("10")); // Convierte a flotante / entero [87, 88]
+console.log(parseInt("10 words")); // Extrae el número entero 10 [89]
+
+// Date.parse(): milisegundos transcurridos desde el 1 de enero de 1970
+let fecha = "April 26, 2020";
+let ms = Date.parse(fecha);
+console.log(ms); [90-92]
+
+let numeros = [31, 32, 63-66];
+
+// forEach: recorre cada elemento del array
+numeros.forEach(i => console.log(i)); [93, 94]
+
+// some: verifica si AL MENOS UN elemento cumple la condición (retorna booleano)
+let existeNegativo = numeros.some(value => value < 0); // false [95-97]
+
+// every: verifica si TODOS los elementos cumplen la condición
+let todosIguales = numeros.every(value => value === 5); // false [98-100]
+
+// map: crea un nuevo array aplicando una transformación a cada elemento
+let duplicados = numeros.map(value => value * 2); [101-103]
+
+// filter: filtra y retorna un sub-array con los elementos que cumplen la condición
+let numerosGrandes = [104].filter(value => value > 2500); [105-107]
+
+// reduce: acumula y reduce el array a un único valor sumando sus elementos
+let sumaTotal = [31, 32, 63-66].reduce((sumar, datoActual) => sumar + datoActual, 0); [108-110]
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <div class="miCalculadora">
+    <form name="calculadora" id="calculadora">
+      <input type="text" name="display" id="display">
+      
+      <div>
+        <input type="button" id="1" value="1" onclick="valor(1)">
+        <input type="button" id="2" value="2" onclick="valor(2)">
+        <input type="button" id="3" value="3" onclick="valor(3)">
+        <input type="button" id="suma" value="+" onclick="valor('+')">
+      </div>
+      
+      <div>
+        <input type="button" id="4" value="4" onclick="valor(4)">
+        <input type="button" id="5" value="5" onclick="valor(5)">
+        <input type="button" id="6" value="6" onclick="valor(6)">
+        <input type="button" id="resta" value="-" onclick="valor('-')">
+      </div>
+      
+      <div>
+        <input type="button" id="7" value="7" onclick="valor(7)">
+        <input type="button" id="8" value="8" onclick="valor(8)">
+        <input type="button" id="9" value="9" onclick="valor(9)">
+        <input type="button" id="multiplicacion" value="*" onclick="valor('*')">
+      </div>
+      
+      <div>
+        <input type="button" id="0" value="0" onclick="valor(0)">
+        <input type="button" id="punto" value="." onclick="valor('.')">
+        <input type="button" id="division" value="/" onclick="valor('/')">
+        <input type="button" id="porcentaje" value="%" onclick="valor('%')">
+      </div>
+      
+      <div class="resultado">
+        <button id="voto" onclick="borrarDisplay('')">borrar</button>
+        <input type="button" id="resultado" value="=" onclick="resultado()">
+      </div>
+    </form>
+  </div>
+  
+  <script src="cal1.js"></script>
+</body>
+</html>
+``` [111-121]
+
+#### 2. Archivo CSS (`estilos.css`)
+```css
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: monospace;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #ef1953;
+}
+
+.miCalculadora {
+  text-align: center;
+  width: 240px;
+  margin: auto;
+  background-color: #025460;
+  border-radius: 10px;
+}
+
+div input[type="button"] {
+  width: 40px;
+  height: 40px;
+  margin: 3px 0;
+}
+
+div input[type="text"] {
+  height: 40px;
+  width: 200px;
+  background-color: #ef2de5;
+  color: #000;
+  padding: 12px 20px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  border: 2px solid #ccc;
+}
+
+#voto {
+  background-color: red;
+  color: #fff;
+  height: 40px;
+  width: 85px;
+  margin: 2px;
+  border-radius: 4px;
+  border: 1px solid #ea9125;
+}
+
+#suma, #resta, #multiplicacion, #division, #porcentaje {
+  background-color: #458570;
+  color: #fff;
+  border: 1px solid #777;
+  font-size: 16px;
+}
+``` [122-133]
+
+#### 3. Archivo JavaScript (`cal1.js`)
+```javascript
+// 1. Función para concatenar los valores presionados en la pantalla (display)
+function valor(x) {
+  document.getElementById('display').value += x;
+} [134-136]
+
+// 2. Función para limpiar/vaciar la pantalla
+function borrarDisplay(y) {
+  document.getElementById('display').value = y;
+} [137, 138]
+
+// 3. Función para evaluar y mostrar el resultado matemático utilizando eval()
+function resultado() {
+  var result = eval(document.getElementById('display').value);
+  document.getElementById('display').value = result;
+} [139-142]
+
+/* ==========================================
+   1. RESET BÁSICO Y MODELO DE CAJA
+   ========================================== */
+* {
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f6f9;
+    color: #333333;
+}
+
+/* ==========================================
+   2. ENCABEZADO Y NAVEGACIÓN (Flexbox)
+   ========================================== */
+header {
+    background-color: #0d1b2a;
+    color: #ffffff;
+    padding: 1rem 2rem;
+    position: sticky; /* Posicionamiento pegajoso al hacer scroll */
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #00b4d8;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+/* Pseudo-clases */
+nav a:hover {
+    color: #00b4d8;
+}
+
+/* ==========================================
+   3. SECCIÓN HERO (Fondos y Alineación)
+   ========================================== */
+.hero {
+    background: linear-gradient(rgba(13, 27, 42, 0.7), rgba(13, 27, 42, 0.7)), 
+                url('https://via.placeholder.com/1200x400') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 5rem 1rem;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #00b4d8;
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #0077b6;
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   4. LAYOUT PRINCIPAL Y GRID (Tarjetas)
+   ========================================== */
+.container {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #0d1b2a;
+}
+
+/* CSS Grid para disposición de elementos */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.card h3 {
+    margin-bottom: 0.5rem;
+    color: #0d1b2a;
+}
+
+/* ==========================================
+   5. FORMULARIOS (Estilos de Inputs)
+   ========================================== */
+.contact-form {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    margin-top: 3rem;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #00b4d8;
+}
+
+/* ==========================================
+   6. DESIGN RESPONSIVO (Media Queries)
+   ========================================== */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.8rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+}
