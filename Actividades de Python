@@ -1,0 +1,85 @@
+//Actividad 1: Automatización de tareas://
+
+import os
+import shutil
+from datetime import datetime
+
+def crear_backup(origen, destino_base):
+    """
+    Comprime una carpeta de origen y la guarda en el directorio destino
+    con un sello de tiempo exacto.
+    """
+    # Verificar si el directorio de origen existe
+    if not os.path.exists(origen):
+        print(f"Error: La carpeta de origen '{origen}' no existe.")
+        return
+
+    # Crear carpeta de destino si no existe
+    if not os.path.exists(destino_base):
+        os.makedirs(destino_base)
+
+    # Generar nombre del archivo con timestamp (AñoMesDia_HoraMinutoSegundo)
+    fecha_hora = datetime.now().strftime("%Y%m%d_%H%M%S")
+    nombre_backup = f"backup_sistema_{fecha_hora}"
+    ruta_completa = os.path.join(destino_base, nombre_backup)
+
+    try:
+        # Crear el archivo .zip utilizando shutil
+        shutil.make_archive(ruta_completa, 'zip', origen)
+        print(f" Backup creado exitosamente en: {ruta_completa}.zip")
+    except Exception as e:
+        print(f" Error crítico al crear el backup: {e}")
+
+# Ejecución del script
+if __name__ == "__main__":
+    # Define aquí las rutas de tu sistema
+    carpeta_a_respaldar = "./datos_importantes" 
+    carpeta_destino = "./copias_seguridad"
+    
+    crear_backup(carpeta_a_respaldar, carpeta_destino)
+
+//Actividad 2: Interacción con APIs y servicios web://
+
+import requests
+
+def obtener_directorio_usuarios(limite=5):
+    """
+    Realiza una petición GET a una API para obtener una lista de usuarios,
+    procesa el JSON y formatea la salida en la consola.
+    """
+    url = "https://jsonplaceholder.typicode.com/users"
+    
+    try:
+        print("Sincronizando con la API externa...")
+        # Configurar un timeout evita que el programa se quede colgado si el servidor falla
+        respuesta = requests.get(url, timeout=10)
+        
+        # Lanza una excepción automáticamente si el código de estado HTTP indica error (ej. 404, 500)
+        respuesta.raise_for_status()
+        
+        # Convertir la carga útil JSON en una lista de diccionarios nativos de Python
+        usuarios = respuesta.json()
+        
+        print(f"\n Conexión exitosa. Mostrando los primeros {limite} registros:\n")
+        print("=" * 40)
+        
+        # Iterar sobre los resultados usando slicing para respetar el límite
+        for usuario in usuarios[:limite]:
+            # Uso de .get() para evitar KeyError si un campo no existe
+            nombre = usuario.get("name", "Desconocido")
+            email = usuario.get("email", "Sin correo")
+            empresa = usuario.get("company", {}).get("name", "Independiente")
+            
+            print(f" Nombre:  {nombre}")
+            print(f" Correo:  {email}")
+            print(f" Empresa: {empresa}")
+            print("-" * 40)
+            
+    except requests.exceptions.RequestException as e:
+        print(f" Error de red o servidor al conectar con la API: {e}")
+    except ValueError:
+        print(" Error: La respuesta de la API no es un JSON válido.")
+
+# Ejecución del script
+if __name__ == "__main__":
+    obtener_directorio_usuarios(limite=3)
